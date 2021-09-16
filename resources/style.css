@@ -7,9 +7,12 @@
 
 body{
     background-color: hsl(225, 100%, 94%);
-    background-image: url(./pattern-background-desktop.svg);
+    background-image: url(./images/pattern-background-desktop.svg);
     background-repeat: no-repeat;
-    height: 100vh;
+    background-size: contain;
+    min-height:100vh;
+    display: grid;
+    place-items: center;
 }
 
 
@@ -17,21 +20,23 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    
 }
 
 .main-box{
     margin: 0 auto;
     background-color: white;
     border-radius: 10px;
-    width: 425px;
+    min-width: 30%;
+    max-width: 50%;
     height: auto;
     text-align: center;
-    margin-top: 50px;
+
+
 }
 
 .hero-image{
-    width: 425px;
-    max-width: 425px;
+    max-width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -47,15 +52,6 @@ body{
     color: grey;
     padding: 0 60px;
     line-height: 1.5em;
-}
-
-.subscription{
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    margin: 35px;
-    padding: 25px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .subscription a{
@@ -83,9 +79,9 @@ button{
     color: white;
     border: none;
     border-radius: 10px;
-    margin: 0 35px;
+
     height: 50px;
-    width: 85%;
+    width: 70%;
     font-weight: 700;
     box-shadow: 0px 25px 10px hsl(245, 75%, 95%);
 }
@@ -112,4 +108,29 @@ button:hover{
 
 .subscription a:hover{
     text-decoration: none;
+}
+
+.subscription{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 35px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 675px){
+    .subscription img{
+        display: none;
+    }
+    .subscription{
+        display: block;
+    }
+    .subscription p{
+        align-items: center;
+        width: 100%;
+    }
+    body{
+        background-image: url(./images/pattern-background-mobile.svg);
+    }
 }
